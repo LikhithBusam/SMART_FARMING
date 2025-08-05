@@ -1,0 +1,16 @@
+# requirements.txt
+python-dotenv
+streamlit
+langchain
+langchain-community
+requests
+pandas
+numpy
+tensorflow
+Pillow
+langchain-gemini
+faiss-cpu
+langchain-google-genai
+streamlit
+google.generativeai
+
