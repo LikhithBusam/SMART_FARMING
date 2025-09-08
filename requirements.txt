@@ -3,14 +3,17 @@ python-dotenv
 streamlit
 langchain
 langchain-community
+langchain-core
 requests
 pandas
-numpy
-tensorflow
 Pillow
 langchain-gemini
 faiss-cpu
 langchain-google-genai
 streamlit
 google.generativeai
+mcp[cli]>=1.13.1
+fastmcp>=0.1.0
+jsonpatch
+pydantic
 

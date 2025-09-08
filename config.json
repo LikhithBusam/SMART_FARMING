@@ -1,0 +1,32 @@
+{
+  "logging": {
+    "level": "INFO"
+  },
+  "server": {
+    "name": "Smart Farming MCP Server",
+    "host": "0.0.0.0",
+    "port": 3000,
+    "transport": "sse"
+  },
+  "tools": {
+    "weather_tool": {
+      "enabled": true,
+      "api_key": null,
+      "default_location": "Hyderabad"
+    },
+    "disease_predictor": {
+      "enabled": true,
+      "model_path": "models/disease_model.pth",
+      "confidence_threshold": 0.7
+    },
+    "agent_creator": {
+      "enabled": true,
+      "model_name": "gemini-2.5-flash",
+      "max_tokens": 1000
+    }
+  },
+  "health_check": {
+    "enabled": true,
+    "endpoint": "/health"
+  }
+}

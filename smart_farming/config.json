@@ -1,0 +1,29 @@
+{
+  "server": {
+    "name": "Smart Farming MCP Server",
+    "host": "0.0.0.0",
+    "port": 8000,
+    "transport": "sse"
+  },
+  "logging": {
+    "level": "INFO"
+  },
+  "tools": {
+    "weather_tool": {
+      "enabled": true,
+      "default_location": "Nuzividu"
+    },
+    "disease_predictor": {
+      "enabled": true,
+      "default_image_path": "temp/sample_image.png"
+    },
+    "agent_creator": {
+      "enabled": true,
+      "default_prompt": "What are the best farming practices?"
+    }
+  },
+  "health_check": {
+    "enabled": true,
+    "endpoint": "/health"
+  }
+}

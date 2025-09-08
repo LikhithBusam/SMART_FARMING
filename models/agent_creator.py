@@ -1,8 +1,7 @@
 # models/agent_creator.py
 import os
 from langchain_google_genai import ChatGoogleGenerativeAI
-
-
+api_key = os.getenv("GEMINI_API_KEY")
 
 from langchain.agents import AgentExecutor, create_react_agent
 from langchain.prompts import PromptTemplate
@@ -19,7 +18,7 @@ def create_agri_agent():
     load_dotenv()
 
     # 1. Define the LLM
-    llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0.7)
+    llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0.7, api_key=api_key)
 
     # 2. Define the tools the agent can use
     tools = [get_weather_data, analyze_plant_image]

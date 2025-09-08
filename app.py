@@ -4,7 +4,7 @@ from PIL import Image
 from models.agent_creator import create_agri_agent
 import os
 import uuid
-
+import asyncio
 # --- Page Configuration ---
 st.set_page_config(
     page_title="Agri-Agent: Your Smart Farming Assistant",
@@ -31,6 +31,37 @@ if "messages" not in st.session_state:
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
+
+# --- Sidebar with MCP Server Information ---
+with st.sidebar:
+    st.header("🔧 MCP Server Integration")
+    
+    st.info("""
+    **MCP Server is configured for Claude Desktop!**
+    
+    Your MCP server is set up in `claude_desktop_config.json` and provides these tools:
+    
+    • **get_project_overview** - Get project overview
+    • **analyze_python_files** - Analyze Python files
+    • **find_ml_components** - Find ML components
+    • **analyze_iot_components** - Analyze IoT components
+    • **get_file_content** - Read file contents
+    • **search_in_project** - Search across project
+    • **generate_project_report** - Generate reports
+    
+    **To use MCP tools:**
+    1. Open Claude Desktop
+    2. The MCP server will be automatically available
+    3. Ask Claude to use any of the tools above
+    """)
+    
+    if st.button("🚀 Start MCP Server"):
+        st.info("MCP Server is configured for Claude Desktop. No need to start it separately!")
+    
+    st.markdown("---")
+    st.markdown("**Server Status:** ✅ Configured")
+    st.markdown("**Server Path:** `server.py`")
+    st.markdown("**Config File:** `claude_desktop_config.json`")
 
 # --- Main Interaction Logic (View & Controller) ---
 uploaded_file = st.file_uploader("Upload an image of a plant leaf for analysis:", type=["jpg", "jpeg", "png"])
